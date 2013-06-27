@@ -156,6 +156,7 @@
                 b = 0;
                 for (var f = 0, j = this.imageParts.length; f < j; ++f) a = this.imageParts[f], b += (a.data.length - 1) * a.pageSize + a.cursor;
                 b += a.pageSize - a.cursor, console.log('rendering finished - filesize ' + Math.round(b / 1e3) + 'kb'), e = new Uint8Array(b), d = 0;
+            window.webagram.filesize = Math.round(b / 1e3) + 'kb';
                 for (var g = 0, l = this.imageParts.length; g < l; ++g) {
                     a = this.imageParts[g];
                     for (var c = 0, i = a.data.length; c < i; ++c) h = a.data[c], k = c, e.set(h, d), k === a.data.length - 1 ? d += a.cursor : d += a.pageSize

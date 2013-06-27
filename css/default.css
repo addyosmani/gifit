@@ -30,10 +30,10 @@ a {
 	color: #ddd;
 	text-decoration: none;
 }
-
+/*
 a:hover {
 	color: #fff;
-}
+}*/
 
 /* Header Style */
 .codrops-top {
@@ -96,6 +96,10 @@ a:hover {
 	content: "\e003";
 }
 
+#filesize{
+color: rgb(117, 91, 42);
+font-size: 28px;
+}
 
 section{
 	height: 300px;

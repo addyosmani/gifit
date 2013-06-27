@@ -28,6 +28,7 @@
 					<img src="images/camera.png" style="width:200px"/>
 					<button id="iterateEffects" class="pt-touch-button">New</button>
 					<button class="pt-touch-button last">Last recording</button>
+
 				</section>
 			</div>
 
@@ -38,8 +39,11 @@
 			           <video id="video" autoplay></video>
 			            <canvas id="canvas" width=360 height-240></canvas>
 					</div>
-					<button class="pt-touch-button record">Record</button>
+					<div class="toolbar">
+						<button class="pt-touch-button record">Record</button>
 					<button class="pt-touch-button stop">Stop</button>
+
+					</div>
 				</section>
 			</div>
 
@@ -48,6 +52,7 @@
 				<h1><span>Does it look</span><strong>sexy</strong> enough?</h1>
 				<section>
 					<div id="finalgif">
+						<progress id='p' max='70'><span>0</span>%</progress>
 					</div>
 					<div class="toolbar">
 					<button class="pt-touch-button confirm-yes">Yes!</button>
@@ -59,6 +64,8 @@
 			<div class="pt-page pt-page-4"><h1><span>Exporting</span><strong>your</strong> creation</h1>
 				<section>
 					<p>We're almost done!</p>
+					<p>Your GIF is <span id="filesize"></span></p>
+					<a class="pt-touch-button" id="downloadLink" href="" download="">Download Your GIF</a>
 					<button class="pt-touch-button confirm-final">Open in a new tab to save</button>
 				</section>
 			</div>

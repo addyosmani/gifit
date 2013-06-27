@@ -75,6 +75,7 @@ var PageTransitions = (function() {
 		});
 
 		$('.confirm-final').on('click', function(el){
+
 			window.open(window.webagram.currentFileBlob, '_');
 		});
 
@@ -83,6 +84,14 @@ var PageTransitions = (function() {
 			setTimeout(function(){
 				goNextPage()
 			}, 500);
+
+			var downloadLink = $('#downloadLink');
+
+			downloadLink.attr('download', window.webagram.currentFileBlob);
+			downloadLink.attr('href', window.webagram.currentFileBlob);
+
+			$('#filesize').text(window.webagram.filesize);			
+
 		});
 
 		$('.confirm-no').on('click', function(){

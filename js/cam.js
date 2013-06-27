@@ -233,6 +233,7 @@ window.webagram.gif.on('finished', function (blob) {
 
     window.webagram.currentFileBlob = URL.createObjectURL(blob);
     writeToFile('lastvideo' + window.webagram.count, blob);
+    $('#p').hide();
 
     window.webagram.count = '_';
 
@@ -295,10 +296,8 @@ function addLast() {
     readFile('/Video/lastvideo_');
 }
 
-
 window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
 window.requestFileSystem(window.TEMPORARY, 10 * 1024 * 1024, initFs, errorHandler);
-
 
 window.webagram.addImage = function (src) {
     var img = document.createElement('img');
