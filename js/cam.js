@@ -216,7 +216,6 @@ var readFile = function (filename) {
             var reader = new FileReader();
             reader.onloadend = function (e) {
                 window.webagram.addImage(this.result);
-
             };
             //reader.readAsText(file);
             reader.readAsDataURL(file);
@@ -231,11 +230,11 @@ function fallback(e) {
 
 window.webagram.gif.on('finished', function (blob) {
 
-    var file = URL.createObjectURL(blob);
+    window.webagram.currentFileBlob = URL.createObjectURL(blob);
     writeToFile('lastvideo', blob);
 
     var myImage = document.createElement('img');
-    myImage.src = file;
+    myImage.src = window.webagram.currentFileBlob;
     window.webagram.finalgif.appendChild(myImage);
 
 });
@@ -247,17 +246,12 @@ function makeGif() {
 function draw(v, bc, w, h) {
 
     bc.drawImage(v, 0, 0, w, h);
-    var stringData = window.webagram.canvas.toDataURL();
 
     window.webagram.gif.addFrame(window.webagram.canvas, {
-        copy: true,
+        copy:true,
         delay: 100
     });
 
-    if (window.webagram.fs !== null) {
-        console.log('drawcall', frames);
-        writeToFile('frames' + frames++, stringData);
-    }
     if (!window.webagram._stop) {
         //200
         setTimeout(function () {
@@ -271,6 +265,7 @@ function success(stream) {
     window.webagram.localMediaStream = stream;
     window.webagram.video.src = window.webkitURL.createObjectURL(stream);
 
+
     var back = window.webagram.canvas;
     var backcontext = back.getContext('2d');
 
@@ -279,6 +274,7 @@ function success(stream) {
     back.width = cw;
     back.height = ch;
     draw(window.webagram.video, backcontext, cw, ch);
+
 
 }
 
@@ -308,8 +304,6 @@ window.webagram.addImage = function (src) {
     img.src = src;
     window.webagram.activity.appendChild(img);
 }
-
-
 
 $(function () {
 

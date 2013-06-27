@@ -58,6 +58,9 @@ var PageTransitions = (function() {
 			}
 			nextPage( animcursor );
 			++animcursor;
+
+			//
+			//deleteReplay();
 		} );
 
 		$('.record').on('click', function(el){
@@ -66,13 +69,13 @@ var PageTransitions = (function() {
 
 		$('.stop').on('click', function(el){
 			stopRec();
-			replayVideo();
+			//replayVideo();
+			makeGif();
 			goNextPage();
 		});
 
 		$('.confirm-final').on('click', function(el){
-			makeGif();
-			goNextPage();
+			window.open(window.webagram.currentFileBlob, '_');
 		});
 
 		$('.confirm-yes').on('click', function(){
