@@ -230,6 +230,8 @@ function fallback(e) {
 
 window.webagram.gif.on('finished', function (blob) {
 
+    window.webagram.finalgif.innerHTML = '';
+
     window.webagram.currentFileBlob = URL.createObjectURL(blob);
     writeToFile('lastvideo', blob);
 
@@ -268,6 +270,7 @@ function success(stream) {
 
     var back = window.webagram.canvas;
     var backcontext = back.getContext('2d');
+
 
     cw = 360;
     ch = 240;

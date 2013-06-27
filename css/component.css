@@ -124,13 +124,16 @@ html, body { height: 100%; }
 
 .recorder, video{
 	background:black;
-	width:360px;
+	width:320px;
 	height:240px;
 	margin:0 auto;
+	background: url('../images/static2.gif');
 }
 
 canvas, .replay-screen{
   display:none;
+  width:360px;
+  height:240px;
 }
 
 .no-js .pt-triggers {
