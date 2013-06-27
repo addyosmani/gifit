@@ -271,7 +271,7 @@ function success(stream) {
     var back = window.webagram.canvas;
     var backcontext = back.getContext('2d');
 
-    cw = 320; //360
+    cw = 360; //360
     ch = 240;
     back.width = cw;
     back.height = ch;
