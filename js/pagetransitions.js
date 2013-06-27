@@ -90,6 +90,7 @@ var PageTransitions = (function() {
 		});
 
 		$('.last').on('click', function(){
+			addLast();
 			gotoPage(7);
 		});
 

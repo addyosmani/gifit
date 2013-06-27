@@ -4,7 +4,8 @@ window.webagram = {
     error: null,
     _stop: false,
     _files: [],
-    frameimages: []
+    frameimages: [],
+    count: ''
 };
 
 var frames = 0;
@@ -141,7 +142,6 @@ var writeToFile = function (name, data) {
 var initFs = function (filesys) {
     window.webagram.fs = filesys;
     setTimeout(initDirectory(window.webagram.fs), 500);
-    addLast();
 };
 
 
@@ -217,7 +217,6 @@ var readFile = function (filename) {
             reader.onloadend = function (e) {
                 window.webagram.addImage(this.result);
             };
-            //reader.readAsText(file);
             reader.readAsDataURL(file);
         }, errorHandler);
     }, errorHandler);
@@ -233,7 +232,9 @@ window.webagram.gif.on('finished', function (blob) {
     window.webagram.finalgif.innerHTML = '';
 
     window.webagram.currentFileBlob = URL.createObjectURL(blob);
-    writeToFile('lastvideo', blob);
+    writeToFile('lastvideo' + window.webagram.count, blob);
+
+    window.webagram.count = '_';
 
     var myImage = document.createElement('img');
     myImage.src = window.webagram.currentFileBlob;
@@ -267,10 +268,8 @@ function success(stream) {
     window.webagram.localMediaStream = stream;
     window.webagram.video.src = window.webkitURL.createObjectURL(stream);
 
-
     var back = window.webagram.canvas;
     var backcontext = back.getContext('2d');
-
 
     cw = 360;
     ch = 240;
@@ -294,7 +293,7 @@ function recordVideo() {
 }
 
 function addLast() {
-    readFile('/Video/lastvideo');
+    readFile('/Video/lastvideo_');
 }
 
 
