@@ -28,6 +28,17 @@ html, body { height: 100%; }
 	transform-style: preserve-3d;
 }
 
+.toolbar{
+	text-align: center;
+	width: 100%;
+}
+
+.toolbar button{
+	width: 35%;
+	margin-right: 16px;
+	display:inline-block;
+}
+
 .pt-page-current,
 .no-js .pt-page {
 	visibility: visible;
