@@ -15,28 +15,86 @@
 	<body>	
 
 		<div class="pt-triggers">
-			<button id="iterateEffects" class="pt-touch-button">Next step</button>
-			
-			<div id="dl-menu" class="dl-menuwrapper">
 
+			<div id="dl-menu" class="dl-menuwrapper">
 			</div><!-- /dl-menu-wrapper-->
 		</div><!-- /triggers -->
 
 		<div id="pt-main" class="pt-perspective">
-			<div class="pt-page pt-page-1"><h1><span>Welcome to</span><strong>Gif</strong> it</h1></div>
-			<div class="pt-page pt-page-2"><h1><span>Record a </span><strong>new</strong> clip</h1></div>
-			<div class="pt-page pt-page-3"><h1><span>Does it look</span><strong>sexy</strong> enough?</h1></div>
-			<div class="pt-page pt-page-4"><h1><span>Exporting</span><strong>your</strong> creation</h1></div>
-			<div class="pt-page pt-page-5"><h1><span>We're</span><strong>finished</strong> cooking!</h1></div>
+
+			<div class="pt-page pt-page-1">
+				<h1><span>Welcome to</span><strong>Gif</strong> it</h1>	
+				<section>
+					<img src="images/camera.png" style="width:250px"/>
+					<button id="iterateEffects" class="pt-touch-button">New</button>
+					<button class="pt-touch-button last">Last recording</button>
+				</section>
+			</div>
+
+
+			<div class="pt-page pt-page-2">
+				<h1><span>Record a </span><strong>new</strong> clip</h1>
+				<section>
+					<div class="recorder">
+			           <video id="video" autoplay></video>
+			            <canvas id="canvas"></canvas>
+					</div>
+					<button class="pt-touch-button record">Record</button>
+					<button class="pt-touch-button stop">Stop</button>
+				</section>
+			</div>
+
+
+			<div class="pt-page pt-page-3">
+				<h1><span>Does it look</span><strong>sexy</strong> enough?</h1>
+				<section>
+					<div class="recorder">
+						<img width=360 height=240 src="" id="replay-screen">
+					</div>
+					<button class="pt-touch-button confirm-yes">Yes!</button>
+					<button class="pt-touch-button confirm-no">No!</button>
+				</section>
+			</div>
+
+			<div class="pt-page pt-page-4"><h1><span>Exporting</span><strong>your</strong> creation</h1>
+				<section>
+					<button class="pt-touch-button confirm-final">Proceed</button>
+				</section>
+			</div>
+
+			<div class="pt-page pt-page-5"><h1><span>We're</span><strong>finished</strong> cooking!</h1>
+				<section>
+					<div class="recorder" id="finalgif">
+					</div>
+				</section>
+			</div>
+
 			<div class="pt-page pt-page-6"><h1><span>Share</span><strong>your</strong> animation</h1></div>
+
+
+		<div class="pt-page pt-page-7">
+			<h1><span>Your</span><strong>last</strong> recording</h1>
+			<section>
+				<div class="recorder">
+		           <div id="activity"></div>
+				</div>
+				<button class="pt-touch-button back">Back</button>
+			</section>
 		</div>
+		
+		</div>
+
+
 
 		<div class="pt-message">
 			<p>Your browser does not support CSS animations.</p>
 		</div>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.dlmenu.js"></script>
 		<script src="js/pagetransitions.js"></script>
+		<script src="js/gif.js"></script>
+		<script src="js/gif.worker.js"></script>
+		<script src="js/cam.js"></script>
 	</body>
 </html>

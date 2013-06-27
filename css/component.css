@@ -45,13 +45,14 @@ html, body { height: 100%; }
 /* Text Styles, Colors, Backgrounds */
 
 .pt-page h1 {
-	position: absolute;
+	/*position: absolute;*/
 	font-weight: 300;
 	font-size: 4.4em;
 	line-height: 1;
 	letter-spacing: 6px;
 	margin: 0;
-	top: 12%;
+	/*top: 12%;*/
+	margin-top: 50px;
 	width: 100%;
 	text-align: center;
 	text-transform: uppercase;
@@ -97,19 +98,34 @@ html, body { height: 100%; }
 	background: #f68dbb;
 }
 
+.pt-page-7 {
+	background: #60d7a9;
+}
+
 /* Triggers (menu and button) */
 
 .pt-triggers {
 	position: absolute;
 	width: 300px;
 	z-index: 999999;
-	top: 12%;
+	top: 40%;
 	left: 50%;
-	margin-top: 130px;
+	margin-top: 160px;
 	-webkit-transform: translateX(-50%);
 	-moz-transform: translateX(-50%);
 	-ms-transform: translateX(-50%); 
 	transform: translateX(-50%);
+}
+
+.recorder, video{
+	background:black;
+	width:360px;
+	height:240px;
+	margin:0 auto;
+}
+
+canvas, .replay-screen{
+  display:none;
 }
 
 .no-js .pt-triggers {
@@ -143,6 +159,8 @@ html, body { height: 100%; }
 .pt-touch-button {
 	background: #fff;
 	color: #aaa;
+	margin: 14px auto;
+	width: 80%;
 }
 
 .pt-triggers .dl-menuwrapper button {

@@ -20,6 +20,18 @@ var PageTransitions = (function() {
 		// support css animations
 		support = Modernizr.cssanimations;
 	
+	function goNextPage(){
+		nextPage(animcursor);
+		++animcursor;		
+	}
+
+	function goPrevPage(){
+		endCurrPage = false;
+		endNextPage = false;
+		resetPage(1, 0 );
+		isAnimating = false;
+	}
+
 	function init() {
 
 		$pages.each( function() {
@@ -48,6 +60,47 @@ var PageTransitions = (function() {
 			++animcursor;
 		} );
 
+		$('.record').on('click', function(el){
+			recordVideo();
+		});
+
+		$('.stop').on('click', function(el){
+			stopRec();
+			replayVideo();
+			goNextPage();
+		});
+
+		$('.confirm-final').on('click', function(el){
+			makeGif();
+			goNextPage();
+		});
+
+		$('.confirm-yes').on('click', function(){
+			goNextPage();
+			setTimeout(function(){
+				goNextPage()
+			}, 500);
+		});
+
+		$('.confirm-no').on('click', function(){
+			goPrevPage();
+		});
+
+		$('.last').on('click', function(){
+			gotoPage(7);
+		});
+
+		$('.back').on('click', function(){
+			gotoPage(11);
+			current = 0;
+		});
+
+	}
+
+	window.gotoPage = function(page){
+		current = page-2;
+		animcursor = page-3; 
+		nextPage( animcursor );
 	}
 
 	function nextPage( animation ) {
@@ -57,6 +110,7 @@ var PageTransitions = (function() {
 		}
 
 		isAnimating = true;
+
 		
 		var $currPage = $pages.eq( current );
 
@@ -375,6 +429,10 @@ var PageTransitions = (function() {
 	function resetPage( $outpage, $inpage ) {
 		$outpage.attr( 'class', $outpage.data( 'originalClassList' ) );
 		$inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' pt-page-current' );
+	}
+
+	window.reset = function(x, y){
+		resetPage(x, y);
 	}
 
 	init();

@@ -23,7 +23,7 @@ body {
 	font-family: 'Lato', Calibri, Arial, sans-serif;
 	color: #fff;
 	background: #333;
-	overflow: hidden;
+
 }
 
 a {
@@ -94,6 +94,13 @@ a:hover {
 }
 .codrops-icon-about:before {
 	content: "\e003";
+}
+
+section{
+	height: 300px;
+	margin-top: 20px;
+	position: relative;
+	text-align:center;
 }
 
 @media screen and (max-width: 25em) { 
