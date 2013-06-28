@@ -305,19 +305,8 @@ window.webagram.addImage = function (src) {
     window.webagram.activity.appendChild(img);
 }
 
-$(function () {
-
-    window.webagram.video = document.querySelector('video');
-    window.webagram.canvas = document.querySelector('canvas');
-    window.webagram.finalgif = document.getElementById('finalgif');
-    window.webagram.replay = document.getElementById('replay-screen');
-    window.webagram.activity = document.getElementById('activity');
-
-});
-
-
-function hideAddressBar()
-{
+/*
+function hideAddressBar(){
   if(!window.location.hash)
   {
       if(document.height < window.outerHeight){
@@ -328,5 +317,21 @@ function hideAddressBar()
   }
 }
 
-window.addEventListener("load", function(){ if(!window.pageYOffset){ hideAddressBar(); } } );
+window.addEventListener("load", hideAddressBar());
 window.addEventListener("orientationchange", hideAddressBar );
+*/
+
+$(function () {
+
+    window.webagram.video = document.querySelector('video');
+    window.webagram.canvas = document.querySelector('canvas');
+    window.webagram.finalgif = document.getElementById('finalgif');
+    window.webagram.replay = document.getElementById('replay-screen');
+    window.webagram.activity = document.getElementById('activity');
+
+    $('#logo').on('click', function(){
+        screenfull.request();
+    });
+        
+});
+
