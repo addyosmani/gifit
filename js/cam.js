@@ -336,7 +336,7 @@ $(function () {
     window.webagram.replay = document.getElementById('replay-screen');
     window.webagram.activity = document.getElementById('activity');
 
-    $('#logo').on('click', function(){
+    $('#logo, #chrome').on('click', function(){
         screenfull.request();
     });
    
