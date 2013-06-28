@@ -61,14 +61,19 @@ var PageTransitions = (function() {
 
 			//
 			//deleteReplay();
+			enableVideo();
 		} );
 
 		$('.record').on('click', function(el){
 			recordVideo();
+			$(this).hide();
+			$('.stop').show();
+			$('.dot').show();
 		});
 
 		$('.stop').on('click', function(el){
 			stopRec();
+			$('.dot').hide();
 			//replayVideo();
 			makeGif();
 			goNextPage();

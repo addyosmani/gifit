@@ -269,6 +269,19 @@ function success(stream) {
     window.webagram.localMediaStream = stream;
     window.webagram.video.src = window.webkitURL.createObjectURL(stream);
 
+/*
+    var back = window.webagram.canvas;
+    var backcontext = back.getContext('2d');
+
+    cw = 360; //360
+    ch = 240;
+    back.width = cw;
+    back.height = ch;
+    */
+    //draw(window.webagram.video, backcontext, cw, ch);
+}
+
+function recordVideo(){
     var back = window.webagram.canvas;
     var backcontext = back.getContext('2d');
 
@@ -277,11 +290,9 @@ function success(stream) {
     back.width = cw;
     back.height = ch;
     draw(window.webagram.video, backcontext, cw, ch);
-
-
 }
 
-function recordVideo() {
+function enableVideo() {
     webagram.video.src = '';
     if (!navigator.getUserMedia) {
         fallback();
@@ -332,6 +343,9 @@ $(function () {
     $('#logo').on('click', function(){
         screenfull.request();
     });
-        
+   
+
+
+
 });
 

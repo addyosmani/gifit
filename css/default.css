@@ -26,6 +26,8 @@ body {
 
 }
 
+
+
 a {
 	color: #ddd;
 	text-decoration: none;
@@ -99,6 +101,18 @@ a:hover {
 #filesize{
 color: rgb(117, 91, 42);
 font-size: 28px;
+}
+
+#container{
+	width:640px;
+	height:400px;
+	margin:0 auto;
+	border:5px solid #fff;
+	overflow:hidden;
+	
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 section{
