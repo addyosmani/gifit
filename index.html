@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="css/multilevelmenu.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<link rel="stylesheet" type="text/css" href="css/animations.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css" />
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body>	
@@ -27,8 +28,13 @@
 
 				<h1><span>Welcome to</span><strong>Gif</strong> it</h1>	
 				<section>
-					<img src="images/camera.png" style="width:200px" id="logo"/>
-					<button id="iterateEffects" class="pt-touch-button">New</button>
+					
+					<div class="logoholder">
+						<img src="images/camera.png" style="width:220px" id="logo"/>
+						<img src="images/chrome.png" id="chrome"/>
+					</div>
+			
+					<button id="iterateEffects" class="pt-touch-button new">New</button>
 					<button class="pt-touch-button last">Last recording</button>
 
 				</section>
@@ -39,7 +45,6 @@
 				<section>
 
 					<div class="recorder">
-
 			           <video id="video" autoplay></video>
 			            <canvas id="canvas" width=360 height-240></canvas>
 			               <div class="dot"></div>

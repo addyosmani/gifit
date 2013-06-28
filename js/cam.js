@@ -1,3 +1,15 @@
+/*
+
+
+Dearly beloved,
+
+We are here today to pay our respects to the below code, which sucks. Mostly because
+we needed to get something done in a short space of time. I hope to someday make this
+code more pretty. Maybe. Who knows?. I want a cookie.
+
+*/
+
+
 window.webagram = {
     localMediaStream: null,
     fs: null,
@@ -19,7 +31,6 @@ window.webagram.gif = new GIF({
 
 
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-
 
 
 function errorHandler(err) {
@@ -316,21 +327,6 @@ window.webagram.addImage = function (src) {
     window.webagram.activity.appendChild(img);
 }
 
-/*
-function hideAddressBar(){
-  if(!window.location.hash)
-  {
-      if(document.height < window.outerHeight){
-          document.body.style.height = (window.outerHeight + 50) + 'px';
-      }
-
-      setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
-  }
-}
-
-window.addEventListener("load", hideAddressBar());
-window.addEventListener("orientationchange", hideAddressBar );
-*/
 
 $(function () {
 
@@ -344,8 +340,10 @@ $(function () {
         screenfull.request();
     });
    
-
-
+    setTimeout(function(){
+        $('.logoholder').addClass('animated swing');
+    }, 500);
+    $('button').addClass('animated bounceInDown');
 
 });
 

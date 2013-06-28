@@ -26,8 +26,6 @@ body {
 
 }
 
-
-
 a {
 	color: #ddd;
 	text-decoration: none;
@@ -96,6 +94,10 @@ a:hover {
 }
 .codrops-icon-about:before {
 	content: "\e003";
+}
+
+.last, .new{
+	top:-400px;
 }
 
 #filesize{

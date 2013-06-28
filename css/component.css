@@ -140,7 +140,9 @@ html, body { height: 100%; }
 	margin:0 auto;
 	background: url('../images/static2.gif');
 	overflow: hidden;
+
 }
+
 
 canvas, .replay-screen{
   display:none;
@@ -234,6 +236,13 @@ background: red;
 position: relative;
 display: none;
 display:none;
+}
+
+#chrome{
+	margin-top: 66px;
+	margin-left: -167px;
+	position: absolute;
+	width: 104px;
 }
 
 

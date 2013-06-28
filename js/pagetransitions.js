@@ -59,9 +59,13 @@ var PageTransitions = (function() {
 			nextPage( animcursor );
 			++animcursor;
 
-			//
-			//deleteReplay();
 			enableVideo();
+
+			setTimeout(function(){
+				$('.recorder').addClass('animated pulse');
+			}, 900);
+			
+
 		} );
 
 		$('.record').on('click', function(el){
